@@ -66,6 +66,7 @@ share/python-wheels/
 # Ignore PDF and image files (keep folder structure via .gitkeep)
 **/*.pdf
 **/*.jpg
+**/*.jfif
 **/*.jpeg
 **/*.png
 **/*.gif
