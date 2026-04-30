@@ -1,0 +1,67 @@
+# Python virtual environments
+env/
+*/env/
+.venv/
+venv/
+
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Optional environment variables file
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# MacOS files
+.DS_Store
+
+# Logs
+*.log
+
+# ChromaDB local stores and SQLite
+**/chroma_store
+**/chroma_store_rebuilt_*
+**/chroma.sqlite3
+**/*.sqlite3
+
+# Uploaded files and temp data
+**/uploads/
+**/tmp/
+**/temp/
+
+# Python bytecode cache
+*.pyc
+
+# Jupyter notebooks output
+*.nbconvert.ipynb
+
+# Local project files
+**/env/**
+
+# Ignore PDF data files
+**/*.pdf

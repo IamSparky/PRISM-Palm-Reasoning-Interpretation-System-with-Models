@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRISM PalmRAG — AI-powered palmistry reading using your right-hand palm image. Ask about career, relationships, health, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>PRISM — Palm Reasoning & Interpretation System</title>
+</head>
+<body class="rye-regular">
+
+<header>
+    <div class="header-inner">
+        <span class="eyebrow">Palmistry AI Insights</span>
+        <h1>PRISM: Palm Reasoning & Interpretation System</h1>
+        <p class="subheading">Upload a right-hand palm photo and ask about palm lines, timing, career, relationships, or personality traits.</p>
+    </div>
+</header>
+
+<main class="page-shell">
+    <div class="layout-grid">
+
+        <!-- ── LEFT PANEL: History Sidebar ── -->
+        <aside class="history-panel" id="history-panel">
+            <div class="history-tabs">
+                <button class="tab-btn active" id="tab-current" onclick="switchTab('current')">Current Chat</button>
+                <button class="tab-btn" id="tab-history" onclick="switchTab('history')">History</button>
+            </div>
+
+            <!-- Current Tab: show uploaded image thumbnail -->
+            <div id="panel-current" class="panel-content active">
+                <div class="current-image-box" id="current-image-box">
+                    <div class="no-image-msg">No palm image uploaded yet.</div>
+                </div>
+                <div class="palm-info-section">
+                    <span class="eyebrow">What is Palmistry?</span>
+                    <p>Read the palm lines, mounts, and timing with smart AI guidance.</p>
+                    <div class="hero-highlights">
+                        <div><strong>Life line</strong> <span>Energy, vitality &amp; lifestyle</span></div>
+                        <div><strong>Head line</strong> <span>Thinking style &amp; decisions</span></div>
+                        <div><strong>Heart line</strong> <span>Emotional health &amp; relationships</span></div>
+                        <div><strong>Fate line</strong> <span>Career, destiny &amp; timing</span></div>
+                    </div>
+                    <p class="hero-note">For palmistry insights only. Out-of-scope questions may return general answers.</p>
+                </div>
+            </div>
+
+            <!-- History Tab: list of past sessions -->
+            <div id="panel-history" class="panel-content">
+                <div class="history-toolbar">
+                    <span class="history-label">Saved Sessions</span>
+                    <button class="clear-all-btn" onclick="clearAllHistory()" title="Delete all history">🗑 Clear All</button>
+                </div>
+                <div id="history-list" class="history-list">
+                    <p class="empty-history-msg">No saved sessions yet.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ── RIGHT PANEL: Chat ── -->
+        <section class="chat-panel">
+            <div class="info-card">
+                <strong>Supported topics</strong>
+                <p>Career, relationships, children, health traits, palm line meanings, timing, and personality-related questions tied to your right palm.</p>
+                <p class="warning">Medical, legal, or financial advice may yield inaccurate results.</p>
+            </div>
+
+            <div class="chat-card">
+                <div id="chat-container" class="chat-container">
+                    <div class="message ai-msg">Welcome. Upload a photo of your right palm to begin.</div>
+                </div>
+
+                <div class="preview-area" id="preview-area" hidden>
+                    <div class="preview-header">
+                        <span>Selected palm image</span>
+                    </div>
+                    <img id="image-preview" alt="Palm preview" />
+                    <p id="preview-fallback" class="preview-fallback" hidden>Unable to preview. Choose a different file.</p>
+                    <p class="preview-note">You can ask follow-up questions without re-uploading the same image.</p>
+                </div>
+
+                <div class="input-area">
+                    <label class="file-input" for="palm-image">
+                        <span id="file-label-text">Choose image</span>
+                        <input type="file" id="palm-image" accept="image/*">
+                    </label>
+                    <input type="text" id="user-question" placeholder="Ask about career, marriage, health, or palm lines...">
+                    <button id="send-btn" onclick="sendRequest()">Consult AI</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
