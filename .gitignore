@@ -63,5 +63,19 @@ share/python-wheels/
 # Local project files
 **/env/**
 
-# Ignore PDF data files
+# Ignore PDF and image files (keep folder structure via .gitkeep)
 **/*.pdf
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.gif
+**/*.bmp
+**/*.svg
+**/*.webp
+**/*.ico
+**/*.tiff
+**/*.tif
+**/*.avif
+**/*.heic
+**/*.heif
+!**/.gitkeep
