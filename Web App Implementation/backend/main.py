@@ -53,4 +53,10 @@ async def analyze_palm(
         raise HTTPException(status_code=500, detail=str(e))
 
 # Serve frontend files
-app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
+app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
+
+if __name__ == "__main__":
+    import uvicorn
+    # Render provides a $PORT environment variable
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
